@@ -6,7 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static void init(int *** ptr) {
+static void init(int *** ptr)
+{
 	if (*ptr != (int **) NULL)
 		return;
 
@@ -20,7 +21,8 @@ static void init(int *** ptr) {
 	**ptr = (int *) NULL;
 }
 
-static void insert(int ** ptr) {
+static void insert(int ** ptr)
+{
 	while (*ptr != (int *) NULL)
 		ptr = (int **) *ptr;
 
@@ -28,7 +30,8 @@ static void insert(int ** ptr) {
 	**ptr = (int) NULL;
 }
 
-static void print_linked_list(int ** ptr) {
+static void print_linked_list(int ** ptr)
+{
 	while (ptr != NULL) {
 		printf(" %p ->", *ptr);
 		ptr = (int **) *ptr;
@@ -37,7 +40,8 @@ static void print_linked_list(int ** ptr) {
 	printf("\b\b  \n"); // Erase the last little arrow
 }
 
-int main(void) {
+int main(void)
+{
 	int ** head = NULL;
 
 	init(&head);
