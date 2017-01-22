@@ -27,6 +27,12 @@ static void insert(int ** ptr)
 		ptr = (int **) *ptr;
 
 	*ptr = (int *) malloc(sizeof(int **));
+
+	if (!ptr) {
+		fprintf(stderr, " error: malloc()\n");
+		exit(1);
+	}
+
 	**ptr = (int) NULL;
 }
 
